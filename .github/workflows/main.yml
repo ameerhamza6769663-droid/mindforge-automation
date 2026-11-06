@@ -1,0 +1,13 @@
+name: Mindforge Daily Automation
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  mindforge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Mindforge automation
+        run: echo "Mindforge automation started successfully!"
