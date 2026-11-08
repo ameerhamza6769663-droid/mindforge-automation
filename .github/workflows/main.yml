@@ -1,4 +1,4 @@
-name: Mindforge Daily Automation
+name: Daily Automation
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  mindforge:
+  run-automation:
     runs-on: ubuntu-latest
     steps:
       - name: Start Mindforge automation
