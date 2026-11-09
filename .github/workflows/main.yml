@@ -26,9 +26,12 @@ jobs:
         run: |
           pip install google-generativeai
 
-      - name: Generate Mindforge Content
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python3 *.py
+       - name: Generate Mindforge Content
+     env:
+       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+     run: |
+       TARGET_FILE=$(find . -maxdepth 1 -name "*generate_content*" -type f | head -n 1)
+       echo "Found file: $TARGET_FILE"
+       python3 "$TARGET_FILE"
+
 
