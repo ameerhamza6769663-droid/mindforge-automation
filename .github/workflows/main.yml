@@ -12,6 +12,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Check Files
+        run: |
+          pwd
+          ls -la
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -25,4 +30,4 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python generate_content.py
+          python3 generate_content.py
